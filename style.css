@@ -100,10 +100,16 @@ video{width:100%;max-width:680px;border-radius:12px;background:#000;
 
 /* SLIDESHOW */
 .slideshow{
-  width:100%;max-width:720px;height:420px;border-radius:12px;overflow:hidden;
-  position:relative;display:grid;place-items:center;
-  background:linear-gradient(180deg,#fff6f1,#fff);
-  box-shadow:0 10px 40px rgba(90,60,50,0.06);
+  width: 100%;
+  max-width: 720px;
+  aspect-ratio: 4 / 3;        /* This forces perfect 4:3 ratio */
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg,#fff6f1,#fff);
+  box-shadow: 0 10px 40px rgba(90,60,50,0.06);
 }
 .slide{
   position:absolute;inset:0;display:grid;place-items:center;
@@ -120,7 +126,19 @@ video{width:100%;max-width:680px;border-radius:12px;background:#000;
 
 .small-dot{width:9px;height:9px;border-radius:50%;background:#ffe9e3}
 .small-dot.active{background:var(--accent)}
-.controls{display:flex;justify-content:center;gap:10px;margin-top:10px}
+.controls{
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;        /* just in case she has many photos */
+}
+
+#dots {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
 .action-row{display:flex;gap:10px;margin-top:12px}
 
 /* FINAL */
@@ -154,5 +172,8 @@ video{width:100%;max-width:680px;border-radius:12px;background:#000;
   .card{padding:26px}
   .title{font-size:36px}
   .final-title{font-size:40px}
-  .slideshow{height:300px}
+  .slideshow{
+    aspect-ratio: 4 / 3;   /* Keeps 4:3 even on small phones */
+    max-width: 96vw;
+  }
 }

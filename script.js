@@ -162,32 +162,6 @@ muteBtn.onclick = () => {
   muteBtn.classList.toggle("muted", bgMusic.muted);
 };
 
-// Download prettier offline card
-document.getElementById("downloadCard").onclick = e => {
-  e.preventDefault();
-  const html = `<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>Happy Birthday Pixie</title>
-<style>
-  body{display:grid;place-items:center;height:100vh;margin:0;background:linear-gradient(180deg,#fff1ea,#fff7f2);font-family:Inter,system-ui;text-align:center;padding:20px;}
-  h1{font-family:"Great Vibes",cursive;color:#ff6b6b;font-size:56px;margin:0;}
-  p{color:#774e46;font-size:22px;margin:20px 0;}
-  .heart{font-size:40px;}
-</style></head>
-<body>
-  <h1>Happy Birthday My Love</h1>
-  <p>Pixie (Pavo Darling)<br>— forever & always ❤️</p>
-  <div class="heart">❤️ ❤️ ❤️</div>
-</body></html>`;
-
-  const blob = new Blob([html], { type: "text/html" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "happy_bday_pixie.html";
-  a.click();
-  URL.revokeObjectURL(url);
-};
-
 // ----------------------
 // PARTICLES
 // ----------------------
