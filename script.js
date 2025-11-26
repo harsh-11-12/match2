@@ -13,11 +13,11 @@ const VIDEO_FILE = "images/video.mp4";
 const MUSIC_FILE = "images/bg-music.mp3";
 
 const CAPTIONS = [
-  "Our very first memory  ♡  22nd July 2025",
-  "Our  first random  &  fun  ride together",
+  "Our veryy first memory ♡ 22nd July 2025",
+  "Our first random & fun ride together.. ♡",
   "Third meet — someone crashed our bubble!",
-  "6th Aug — finally grabbed you   ♡   hehe",
-  "Our first food date at KFC      ♡   hehe"
+  "6th Aug — finally grabbed you ♡ hehe....",
+  "Our first food-date at KFC(6Aug) ♡ hehehe"
 ];
 
 // ----------------------
