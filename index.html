@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Love</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Preload critical assets -->
+  <link rel="preload" href="images/bg-music.mp3" as="audio">
+  <link rel="preload" href="images/video.mp4" as="video">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap" role="main" aria-live="polite">
+
+  <!-- Preloader -->
+  <div id="preloader" class="preloader" aria-label="Loading surprise">
+    <div class="loader" role="img" aria-hidden="true">
+      <div class="heart"></div>
+    </div>
+    <div class="txt">Preparing your surprise for Pixie…</div>
+  </div>
+
+  <!-- Screens -->
+  <div class="screens">
+
+    <!-- Screen 1 -->
+    <section id="s1" class="screen active" aria-hidden="false">
+      <div class="card">
+        <h1 class="title">Hey cutie</h1>
+        <p class="lead">Tap the button below — I made something special just for you, Pixie (Pavo Darling).</p>
+        <button class="btn" id="startBtn">Tap me</button>
+        <div class="muted-small">Tap anywhere on the button to begin the surprise</div>
+      </div>
+    </section>
+
+    <!-- Screen 2 -->
+    <section id="s2" class="screen" aria-hidden="true">
+      <div class="card">
+        <h2 class="sec-title">Thank you</h2>
+        <p class="lead">Thank you for staying with me for almost <strong>6 months</strong> — you mean the world to me.</p>
+        <button class="btn" id="toSurprise">Press for a surprise</button>
+        <button class="btn ghost" id="back1" style="margin-top:6px;">Back</button>
+      </div>
+    </section>
+
+    <!-- Screen 3 - Video -->
+    <!-- Screen 3 - Video -->
+    <section id="s3" class="screen" aria-hidden="true">
+      <div class="card">
+        <div class="video-wrap">
+          <h2 class="sec-title">Here’s something for you</h2>
+
+          <video 
+            id="surpriseVideo" 
+            controls 
+            playsinline 
+            webkit-playsinline
+            poster="images/photo1.jpg"
+            preload="metadata">
+            <source src="images/video.mp4" type="video/mp4" />
+            Your browser does not support video.
+          </video>
+
+          <div class="video-btns">
+            <button class="btn" id="playVideoBtn">Play with Sound</button>
+            <button class="btn ghost" id="skipToSlideshow">Skip to photos</button>
+            <button class="btn ghost" id="fullscreenBtn" style="margin-top:8px;">Fullscreen</button>
+          </div>
+
+          <div class="muted-small">
+            Important: Tap “Play with Sound” first — your special message has audio! 
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen 4 - Slideshow -->
+    <section id="s4" class="screen" aria-hidden="true">
+      <div class="card">
+        <h2 class="sec-title">Some memories</h2>
+        <div class="slideshow" id="slideshow" aria-live="polite"></div>
+        <div class="controls"><div id="dots"></div></div>
+        <div class="action-row">
+          <button class="btn" id="toFinalBtn">Finish & Celebrate</button>
+          <button class="btn ghost" id="backFromSlide">Back</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen 5 - Final -->
+    <section id="s5" class="screen" aria-hidden="true">
+      <div class="card final-wrap">
+        <div class="particles" id="particles"></div>
+        <div class="final-content">
+          <div class="final-title">Happy Birthday My Love</div>
+          <div class="final-sub">Pixie (Pavo Darling) — forever & always</div>
+        </div>
+        <div class="action-row">
+          <button class="btn" id="replayBtn">Play Again</button>
+          <a class="btn ghost" id="downloadCard" download="happy_bday_pixie.html">Save (Download)</a>
+          <button class="btn ghost" id="muteBtn">Unmute</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<audio id="bgMusic" preload="auto"></audio>
+<script src="script.js"></script>
+
+</body>
+</html>
