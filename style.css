@@ -98,48 +98,94 @@ video{width:100%;max-width:680px;border-radius:12px;background:#000;
       box-shadow:0 12px 30px rgba(90,60,50,0.08)}
 .video-btns{display:flex;gap:10px;margin-top:8px}
 
-/* SLIDESHOW */
-.slideshow{
+/* ──────────────────────────────
+   PHOTO FRAME — 4:3 ONLY (never stretched)
+   ────────────────────────────── */
+/* PHOTO FRAME — size completely locked forever */
+.photo-frame {
   width: 100%;
   max-width: 720px;
-  aspect-ratio: 4 / 3;        /* This forces perfect 4:3 ratio */
+  margin: 0 auto 20px auto;
   border-radius: 12px;
   overflow: hidden;
-  position: relative;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(180deg,#fff6f1,#fff);
+  background: white;
   box-shadow: 0 10px 40px rgba(90,60,50,0.06);
-}
-.slide{
-  position:absolute;inset:0;display:grid;place-items:center;
-  background-size:cover;background-position:center;
-  opacity:0;transform:scale(1.04);transition:opacity .9s,transform .9s;
-}
-.slide.show{opacity:1;transform:scale(1)}
-
-.caption{
-  position:absolute;bottom:18px;left:18px;right:18px;
-  background:var(--glass);backdrop-filter:blur(4px);
-  padding:10px 14px;border-radius:9px;font-weight:600;color:#5b403a;
+  
+  /* THIS IS THE KEY: fixed 4:3 box that never changes */
+  aspect-ratio: 4 / 3;
+  height: auto;
 }
 
-.small-dot{width:9px;height:9px;border-radius:50%;background:#ffe9e3}
-.small-dot.active{background:var(--accent)}
-.controls{
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 16px;
-  flex-wrap: wrap;        /* just in case she has many photos */
+.slideshow {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #000;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* ──────────────────────────────
+   CAPTION CONTAINER — completely separate!
+   ────────────────────────────── */
+.caption-container {
+  margin-top: 18px;
+  padding: 18px 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(90,60,50,0.06);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.caption-text {
+  text-align: center;
+  font-weight: 600;
+  color: #5b403a;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Dots (horizontal) */
+.controls {
+  margin-top: 20px;
 }
 
 #dots {
   display: flex;
+  justify-content: center;
   gap: 12px;
-  align-items: center;
+  flex-wrap: wrap;
 }
-.action-row{display:flex;gap:10px;margin-top:12px}
+
+.small-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ffe9e3;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.small-dot.active {
+  background: var(--accent);
+  transform: scale(1.3);
+}
+
+.action-row{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;justify-content:center}
 
 /* FINAL */
 .final-wrap{padding:36px;display:flex;flex-direction:column;gap:16px;
@@ -164,7 +210,6 @@ video{width:100%;max-width:680px;border-radius:12px;background:#000;
   to{transform:translateY(-420px) rotate(45deg);opacity:0}
 }
 
-/* Mute button */
 #muteBtn{font-size:14px;padding:10px 16px}
 #muteBtn.muted{opacity:0.6}
 
@@ -172,8 +217,5 @@ video{width:100%;max-width:680px;border-radius:12px;background:#000;
   .card{padding:26px}
   .title{font-size:36px}
   .final-title{font-size:40px}
-  .slideshow{
-    aspect-ratio: 4 / 3;   /* Keeps 4:3 even on small phones */
-    max-width: 96vw;
-  }
+  .caption-text{font-size:15px}
 }

@@ -85,15 +85,30 @@
     <section id="s4" class="screen" aria-hidden="true">
       <div class="card">
         <h2 class="sec-title">Some memories</h2>
-        <div class="slideshow" id="slideshow" aria-live="polite"></div>
-        <div class="controls"><div id="dots"></div></div>
+
+        <!-- Photo container (4:3 only) -->
+        <div class="photo-frame">
+          <div class="slideshow" id="slideshow" aria-live="polite"></div>
+        </div>
+
+        <!-- Caption container (completely separate, full width) -->
+        <div class="caption-container">
+          <div class="caption-text" id="captionBox">
+            Loading your memories…
+          </div>
+        </div>
+
+        <!-- Dots -->
+        <div class="controls">
+          <div id="dots"></div>
+        </div>
+
         <div class="action-row">
           <button class="btn" id="toFinalBtn">Finish & Celebrate</button>
           <button class="btn ghost" id="backFromSlide">Back</button>
         </div>
       </div>
     </section>
-
     <!-- Screen 5 - Final -->
     <section id="s5" class="screen" aria-hidden="true">
       <div class="card final-wrap">

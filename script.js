@@ -13,11 +13,11 @@ const VIDEO_FILE = "images/video.mp4";
 const MUSIC_FILE = "images/bg-music.mp3";
 
 const CAPTIONS = [
-  "Our first memory together: 22nd July 2025 ❤️",
-  "Our First random and fun ride",
-  "Third Meeting, where someone interrupted our space",
-  "6-Aug, i grabbed you<3(hehehehe)",
-  "Our first food date(kfc), hehehe"
+  "Our very first memory  ♡  22nd July 2025",
+  "Our  first random  &  fun  ride together",
+  "Third meet — someone crashed our bubble!",
+  "6th Aug — finally grabbed you   ♡   hehe",
+  "Our first food date at KFC      ♡   hehe"
 ];
 
 // ----------------------
@@ -93,19 +93,18 @@ document.getElementById("skipToSlideshow").onclick = () => {
 let slideIndex = 0;
 let slideTimer = null;
 
+
 function initSlideshow() {
   if (slideshowEl.dataset.ready === "1") return;
   slideshowEl.dataset.ready = "1";
+
+  slideshowEl.innerHTML = "";
+  dotsEl.innerHTML = "";
 
   PHOTOS.forEach((src, i) => {
     const slide = document.createElement("div");
     slide.className = "slide";
     slide.style.backgroundImage = `url("${src}")`;
-
-    const cap = document.createElement("div");
-    cap.className = "caption";
-    cap.textContent = CAPTIONS[i] || `Memory ${i + 1}`;
-    slide.appendChild(cap);
     slideshowEl.appendChild(slide);
 
     const dot = document.createElement("div");
@@ -115,6 +114,7 @@ function initSlideshow() {
   });
 
   gotoSlide(0);
+
   slideTimer = setInterval(() => {
     gotoSlide((slideIndex + 1) % PHOTOS.length);
   }, 3500);
@@ -122,12 +122,17 @@ function initSlideshow() {
 
 function gotoSlide(i) {
   slideIndex = i;
+
   const slides = slideshowEl.querySelectorAll(".slide");
   const dots = dotsEl.querySelectorAll(".small-dot");
-  slides.forEach(s => s.classList.remove("show"));
+  const captionBox = document.getElementById("captionBox");
+
+  slides.forEach(s => s.classList.remove("active"));
   dots.forEach(d => d.classList.remove("active"));
-  slides[i].classList.add("show");
+
+  slides[i].classList.add("active");
   dots[i].classList.add("active");
+  captionBox.textContent = CAPTIONS[i] || `Memory ${i + 1}`;
 }
 
 document.getElementById("toFinalBtn").onclick = showFinal;
