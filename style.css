@@ -221,44 +221,46 @@ video{width:100%;max-width:680px;border-radius:12px;background:#000;
 }
 
 /* ──────────────────────────────
-   FIX: Screen 3 (Video) perfect centering on mobile
+   SCREEN 3 — PERFECT CENTERING ON ALL PHONES
    ────────────────────────────── */
-#s3 .card {
-  padding: 32px 20px;           /* generous breathing room on small screens */
-  gap: 20px;
+.video-screen {
+  padding: 32px 20px !important;
+  max-width: 100%;
 }
 
-#s3 .video-wrap {
+.video-outer {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 8px;
+}
+
+.video-inner {
+  position: relative;
   width: 100%;
   max-width: 680px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(90,60,50,0.18);
+  background: #000;
 }
 
 #s3 video {
   width: 100%;
-  max-width: 100%;
   height: auto;
-  border-radius: 14px;
-  box-shadow: 0 12px 32px rgba(90,60,50,0.12);
+  display: block;
+  border-radius: 16px;
 }
 
 #s3 .video-btns {
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
+  margin-top: 8px;
 }
 
-#s3 .muted-small {
-  max-width: 90%;
-  font-size: 14px;
-}
-
-/* Extra polish for very small phones */
 @media (max-width: 480px) {
-  #s3 .card { padding: 28px 16px; }
-  #s3 .sec-title { font-size: 20px; }
+  .video-screen { padding: 24px 12px !important; }
+  .video-inner { border-radius: 14px; }
 }

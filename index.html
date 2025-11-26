@@ -51,36 +51,30 @@
     </section>
 
     <!-- Screen 3 - Video -->
-    <!-- Screen 3 - Video -->
     <section id="s3" class="screen" aria-hidden="true">
-      <div class="card">
-        <div class="video-wrap">
-          <h2 class="sec-title">Here’s something for you</h2>
+      <div class="card video-screen">
+        <h2 class="sec-title">Here’s something for you</h2>
 
-          <video 
-            id="surpriseVideo" 
-            controls 
-            playsinline 
-            webkit-playsinline
-            poster="images/photo1.jpg"
-            preload="metadata">
-            <source src="images/video.mp4" type="video/mp4" />
-            Your browser does not support video.
-          </video>
-
-          <div class="video-btns">
-            <button class="btn" id="playVideoBtn">Play with Sound</button>
-            <button class="btn ghost" id="skipToSlideshow">Skip to photos</button>
-            <button class="btn ghost" id="fullscreenBtn" style="margin-top:8px;">Fullscreen</button>
+        <div class="video-outer">
+          <div class="video-inner">
+            <video id="surpriseVideo" controls playsinline webkit-playsinline poster="images/photo1.jpg" preload="metadata">
+              <source src="images/video.mp4" type="video/mp4" />
+              Your browser does not support video.
+            </video>
           </div>
+        </div>
 
-          <div class="muted-small">
-            Important: Tap “Play with Sound” first — your special message has audio! 
-          </div>
+        <div class="video-btns">
+          <button class="btn" id="playVideoBtn">Play with Sound</button>
+          <button class="btn ghost" id="skipToSlideshow">Skip to photos</button>
+          <button class="btn ghost" id="fullscreenBtn">Fullscreen</button>
+        </div>
+
+        <div class="muted-small">
+          Important: Tap “Play with Sound” first — your special message has audio!
         </div>
       </div>
     </section>
-
     <!-- Screen 4 - Slideshow -->
     <section id="s4" class="screen" aria-hidden="true">
       <div class="card">
