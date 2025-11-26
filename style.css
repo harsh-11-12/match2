@@ -110,10 +110,11 @@ video{width:100%;max-width:680px;border-radius:12px;background:#000;
   overflow: hidden;
   background: white;
   box-shadow: 0 10px 40px rgba(90,60,50,0.06);
-  
-  /* THIS IS THE KEY: fixed 4:3 box that never changes */
   aspect-ratio: 4 / 3;
   height: auto;
+  
+  /* ← ADD THIS LINE → makes it look premium on all devices */
+  background: linear-gradient(135deg, #fff8f5, #fff);
 }
 
 .slideshow {
@@ -305,4 +306,70 @@ video{width:100%;max-width:680px;border-radius:12px;background:#000;
   }
   .prev-arrow { left: 8px; }
   .next-arrow { right: 8px; }
+}
+
+
+/* ──────────────────────────────
+   FINAL RESPONSIVE PERFECTION — Mobile vs Desktop
+   ────────────────────────────── */
+@media (min-width: 768px) {
+  /* Desktop — bigger, more elegant */
+  .card { padding: 48px 40px; max-width: 760px; }
+  .title { font-size: 56px; }
+  .sec-title { font-size: 24px; }
+  .lead { font-size: 17px; }
+  .final-title { font-size: 68px; }
+  .final-sub { font-size: 20px; }
+
+  .photo-frame { 
+    max-width: 760px; 
+    box-shadow: 0 20px 60px rgba(90,60,50,0.14); 
+  }
+  .caption-container { 
+    padding: 24px 32px; 
+    font-size: 17px; 
+    max-width: 760px; 
+  }
+
+  .nav-arrow {
+    width: 56px;
+    height: 56px;
+    font-size: 32px;
+  }
+  .prev-arrow { left: 16px; }
+  .next-arrow { right: 16px; }
+}
+
+@media (max-width: 767px) {
+  /* Mobile — cozy, touch-perfect */
+  .card { padding: 32px 20px; }
+  .title { font-size: 42px; }
+  .sec-title { font-size: 21px; }
+  .final-title { font-size: 48px; }
+
+  .photo-frame { 
+    margin: 0 auto 16px; 
+    border-radius: 16px; 
+  }
+  .caption-container { 
+    padding: 18px 20px; 
+    border-radius: 14px; 
+    font-size: 15.5px; 
+  }
+
+  .nav-arrow {
+    width: 48px;
+    height: 48px;
+    font-size: 26px;
+  }
+  .prev-arrow { left: 10px; }
+  .next-arrow { right: 10px; }
+}
+
+/* Ultra-small phones */
+@media (max-width: 380px) {
+  .card { padding: 28px 16px; }
+  .title { font-size: 38px; }
+  .final-title { font-size: 44px; }
+  .nav-arrow { width: 44px; height: 44px; font-size: 24px; }
 }
