@@ -75,24 +75,26 @@
         </div>
       </div>
     </section>
+
     <!-- Screen 4 - Slideshow -->
     <section id="s4" class="screen" aria-hidden="true">
       <div class="card">
         <h2 class="sec-title">Some memories</h2>
 
-        <!-- Photo container (4:3 only) -->
+        <!-- Photo container -->
         <div class="photo-frame">
           <div class="slideshow" id="slideshow" aria-live="polite"></div>
+          
+          <!-- ← PREV & NEXT ARROWS → -->
+          <button class="nav-arrow prev-arrow" id="prevBtn">❮</button>
+          <button class="nav-arrow next-arrow" id="nextBtn">❯</button>
         </div>
 
-        <!-- Caption container (completely separate, full width) -->
+        <!-- Caption container (separate) -->
         <div class="caption-container">
-          <div class="caption-text" id="captionBox">
-            Loading your memories…
-          </div>
+          <div class="caption-text" id="captionBox">Loading your memories…</div>
         </div>
 
-        <!-- Dots -->
         <div class="controls">
           <div id="dots"></div>
         </div>
@@ -103,6 +105,7 @@
         </div>
       </div>
     </section>
+
     <!-- Screen 5 - Final -->
     <section id="s5" class="screen" aria-hidden="true">
       <div class="card final-wrap">

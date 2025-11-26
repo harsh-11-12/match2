@@ -113,6 +113,17 @@ function initSlideshow() {
     dotsEl.appendChild(dot);
   });
 
+  // Add Prev / Next button functionality
+  document.getElementById("prevBtn").onclick = () => {
+    let newIndex = slideIndex - 1;
+    if (newIndex < 0) newIndex = PHOTOS.length - 1;
+    gotoSlide(newIndex);
+  };
+
+  document.getElementById("nextBtn").onclick = () => {
+    gotoSlide((slideIndex + 1) % PHOTOS.length);
+  };
+
   gotoSlide(0);
 
   slideTimer = setInterval(() => {

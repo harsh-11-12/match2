@@ -264,3 +264,45 @@ video{width:100%;max-width:680px;border-radius:12px;background:#000;
   .video-screen { padding: 24px 12px !important; }
   .video-inner { border-radius: 14px; }
 }
+
+/* ──────────────────────────────
+   PREV / NEXT ARROWS — Beautiful & Touch-Friendly
+   ────────────────────────────── */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.92);
+  color: #333;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  backdrop-filter: blur(8px);
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.nav-arrow:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.prev-arrow { left: 12px; }
+.next-arrow { right: 12px; }
+
+@media (max-width: 480px) {
+  .nav-arrow {
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+  }
+  .prev-arrow { left: 8px; }
+  .next-arrow { right: 8px; }
+}
