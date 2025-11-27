@@ -108,7 +108,7 @@ video{width:100%;max-width:680px;border-radius:12px;background:#000;
 /* PHOTO FRAME — size completely locked forever */
 .photo-frame {
   width: 100%;
-  max-width: 720px;
+  max-width: 2000px;
   margin: 0 auto 20px auto;
   border-radius: 12px;
   overflow: hidden;
