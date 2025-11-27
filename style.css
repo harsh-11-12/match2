@@ -264,7 +264,33 @@ video{width:100%;max-width:680px;border-radius:12px;background:#000;
   gap: 12px;
   margin-top: 8px;
 }
+/* Romantic dark overlay + subtle heart — disappears as soon as video plays */
+#s3 .video-inner {
+  position: relative;
+  overflow: hidden;
+}
 
+#s3 .video-inner::before {
+  content: "♡";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0a0000, #1a0000);
+  background-size: 100% 200%;
+  background-position: 0 100%;
+  display: grid;
+  place-items: center;
+  font-size: 72px;
+  color: #ff6b6b28;
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 16px;
+  opacity: 1;
+  transition: opacity 1.2s ease;
+}
+
+#s3 .video-inner.playing::before {
+  opacity: 0;
+}
 @media (max-width: 480px) {
   .video-screen { padding: 24px 12px !important; }
   .video-inner { border-radius: 14px; }

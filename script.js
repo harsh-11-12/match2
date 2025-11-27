@@ -67,6 +67,7 @@ document.getElementById("playVideoBtn").onclick = async () => {
     await surpriseVideo.play();
     document.getElementById("playVideoBtn").textContent = "Playing…";
     document.getElementById("playVideoBtn").disabled = true;
+    document.querySelector("#s3 .video-inner").classList.add("playing");
   } catch (err) {
     alert("Please tap the video itself to play with sound!");
   }
