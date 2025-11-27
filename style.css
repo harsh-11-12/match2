@@ -15,8 +15,12 @@ html,body{height:100%}
 body{
   font-family:"Inter",system-ui;
   background:
-    radial-gradient(1200px 600px at 10% 10%,#fff1ea 0%,transparent 18%),
-    linear-gradient(180deg,#fff7f2 0%,#fff 60%);
+    repeating-conic-gradient(from 45deg at 50% 50%, 
+      rgba(255,182,193,0.03) 0deg, transparent 2deg, transparent 10deg, rgba(255,182,193,0.03) 12deg),
+    radial-gradient(circle at 20% 80%, #fff1eb 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, #ffe4e1 0%, transparent 50%),
+    linear-gradient(135deg, #fff8f5 0%, #fdf0ec 50%, #faf3f8 100%);
+  background-attachment: fixed;
   color:var(--muted);
   display:flex;
   align-items:center;
@@ -307,7 +311,6 @@ video{width:100%;max-width:680px;border-radius:12px;background:#000;
   .prev-arrow { left: 8px; }
   .next-arrow { right: 8px; }
 }
-
 
 /* ──────────────────────────────
    FINAL RESPONSIVE PERFECTION — Mobile vs Desktop
