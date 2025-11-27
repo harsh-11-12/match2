@@ -6,18 +6,28 @@ const PHOTOS = [
   "images/photo2.jpg",
   "images/photo3.jpg",
   "images/photo4.jpg",
-  "images/photo5.jpg"
+  "images/photo5.jpg",
+  "images/photo6.jpg",
+  "images/photo7.jpg",
+  "images/photo8.jpg",
+  "images/photo9.jpg",
+  "images/photo10.jpg"
 ];
 
 const VIDEO_FILE = "images/video.mp4";
 const MUSIC_FILE = "images/bg-music.mp3";
 
 const CAPTIONS = [
-  "1st date: 22nd july",
-  "2nd date: 30th july",
-  "3rd date: 04th Augest",
-  "4th date: 06th Augest",
+  "1st meet: 22nd july",
+  "2nd ride: 30th july",
+  "3rd ride: 04th Augest",
+  "4th ride: 06th Augest",
   "5th date: 06th Augest",
+  "18 Oct: After so long!",
+  "19 Oct: Just kisses...",
+  "21 Oct: Ate nothing😂",
+  "23 Oct: Remember this?",
+  "24 Oct: Sad Goodbyes🥹"
 ];
 
 // ----------------------
